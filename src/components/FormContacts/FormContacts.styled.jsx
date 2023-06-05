@@ -36,6 +36,7 @@ export const InputField = styled.input`
 
 export const BtnAddContacts = styled.button`
   border: none;
+  cursor: pointer;
   padding: 8px 15px 8px 15px;
   background: #ff8500;
   color: #fff;
