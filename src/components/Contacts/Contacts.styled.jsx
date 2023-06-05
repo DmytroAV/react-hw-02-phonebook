@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const ContainerContacts = styled.ul`
   display: grid;
-  /* justify-content: center; */
   width: 100%;
   padding: 20px 12px 10px 30px;
   gap: 20px;

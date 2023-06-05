@@ -31,6 +31,6 @@ code {
   background-color:  #f8f8f8;
   border: 2px solid #C2C2C2;
   border-radius: 3px;
-box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+  box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
 }
 `;

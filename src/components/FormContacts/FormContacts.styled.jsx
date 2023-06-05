@@ -4,7 +4,6 @@ export const ContainerForm = styled.form`
   display: grid;
   justify-content: center;
   width: 100%;
-  /* height: 300px; */
   padding: 20px 12px 10px 20px;
   gap: 20px;
 `;
