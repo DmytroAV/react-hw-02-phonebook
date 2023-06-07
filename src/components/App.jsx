@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { nanoid } from 'nanoid';
 import { Message } from './Message/Message';
 import { FormContacts } from './FormContacts/FormContacts';
@@ -6,6 +8,16 @@ import { Contacts } from './Contacts/Contacts';
 import { Section } from './Section/Section';
 import { GlobalStyle } from './GlobalStyle';
 
+const notifyOptions = {
+  position: 'top-right',
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: 'colored',
+};
 class App extends Component {
   state = {
     contacts: [
@@ -17,18 +29,21 @@ class App extends Component {
     filter: '',
   };
 
-  createContact = data => {
+  createContact = ({ name, number }) => {
     const { contacts } = this.state;
-    const newContact = {
-      ...data,
-      id: nanoid(),
-    };
-
-    const checkName = contacts.some(({ name }) => name === data.name);
+    const normalName = name.toLowerCase();
+    const checkName = contacts.some(({ name }) => name.toLowerCase() === normalName);
     if (checkName) {
-      alert(`${data.name} is already in your phonebook`);
+      toast.error(`${name} is already in your phonebook`, notifyOptions);
       return;
     }
+
+    const newContact = {
+      id: nanoid(),
+      name: name,
+      number: number,
+    };
+
     this.setState(state => ({
       contacts: [...state.contacts, newContact],
     }));
@@ -65,6 +80,7 @@ class App extends Component {
               <Message message="There are no contacts in your phonebook. Please add your first contact!" />
             )}
           </Section>
+          <ToastContainer />
         </div>
       </>
     );
