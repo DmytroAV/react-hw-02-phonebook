@@ -41,9 +41,7 @@ export const FormContacts = ({ onSubmit }) => {
   };
   return (
     <Formik initialValues={initialValues} validationSchema={userSchema} onSubmit={handleSubmit}>
-      <ContainerForm
-      // autoComplete="off"
-      >
+      <ContainerForm autoComplete="off">
         <LabelInput htmlFor="name">
           Name
           <InputField type="text" name="name" placeholder="Enter full name" required />
