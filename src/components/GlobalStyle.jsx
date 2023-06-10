@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import 'normalize.css';
+import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -25,7 +25,7 @@ code {
   display: grid;
   justify-items: center;
   gap: 50px;
-  width: 600px;
+  width: 700px;
   padding: 24px;
   margin: auto;
   background-color:  #f8f8f8;

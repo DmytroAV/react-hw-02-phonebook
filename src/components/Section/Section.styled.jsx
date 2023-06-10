@@ -13,6 +13,6 @@ export const Heading = styled.h2`
   border-bottom: 2px solid #ddd;
   margin-bottom: 20px;
   font-size: 18px;
-  padding-left: 15px;
+  padding-left: 40px;
   padding-bottom: 5px;
 `;
